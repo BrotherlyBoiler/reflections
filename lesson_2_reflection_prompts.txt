@@ -1,7 +1,7 @@
 What happens when you initialize a repository? Why do you need to do it?
 
     When a repository is initialized a .git file is added to the the location.
-    A location is intialized so version control can be incorporated into it.
+    A directory is intialized so version control can be incorporated into it.
 
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
@@ -14,13 +14,39 @@ What value do you think it offers?
 How can you use the staging area to make sure you have one commit per logical
 change?
 
+    By adding relevant changes to files that comprise a locgical change in the
+    project to the staging area before commiting, you can make sure that there
+    is just one logical change per commit.
+
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
+    Branches can be useful in keeping the history organized by branching off
+    master whenever, say, an experimental feature or a bug fix needs to be
+    worked on but not commited to master right away. Branches help with it by
+    letting you work independently from the master branch.
+
 How do the diagrams help you visualize the branch structure?
+
+    They put all the branch structures in a visual format so you can clearly
+    understand where and how branches currently exist and it lets you look at
+    thier own commits as well.
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+    By merging branches all the changes done since branching from the parent
+    commit are added to the master branch. Note that any commits that are not
+    accessibly by the master branch at this point are lost (unless thier commit
+    IDs are known). We represent the diagram in that way because it closely
+    resembles how the branching takes place and also shows when a branch was
+    merged with another.
+
 What are the pros and cons of Git’s automatic merging vs. always doing merges
 manually?
+
+    Git's auto merging works when the additions to the parent file made by the
+    branches are obvious enough for Git's algorithms to figure out. Otherwise,
+    git let's the merger know that there are merge conflicts. This could get
+    tedious when the changes are fairly obvious and require minor changes but
+    it is still better than dealing with each change individually.
